@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 
 const navGroups = [
-  { label: 'OVERVIEW', items: [{ label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard }] },
+  { label: 'OVERVIEW', items: [{ label: 'Dashboard', href: '/', icon: LayoutDashboard }] },
   { label: 'FINANCE', items: [{ label: 'General Ledger', href: '/finance/general-ledger', icon: FileChartColumn }, { label: 'Expenses', href: '/finance/expenses', icon: TrendingDown }, { label: 'Invoices', href: '/finance/invoices', icon: FileText }] },
   { label: 'OPERATIONS', items: [{ label: 'Procurement', href: '/operations/procurement', icon: ShoppingCart }, { label: 'Inventory', href: '/operations/inventory', icon: Boxes }, { label: 'Sales', href: '/operations/sales', icon: TrendingUp }] },
   { label: 'PEOPLE', items: [{ label: 'HR & Payroll', href: '/people/hr', icon: Users }] },
@@ -32,7 +32,7 @@ export function ErpShell({ children }: { children: React.ReactNode }) {
     window.addEventListener('storage', sync)
     return () => window.removeEventListener('storage', sync)
   }, [])
-  const isActive = (href: string) => pathname === href || (href !== '/dashboard' && pathname.startsWith(href))
+  const isActive = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/')
   useEffect(() => {
     if (!profileOpen) return
     const closeOnEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') setProfileOpen(false) }

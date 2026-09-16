@@ -54,7 +54,7 @@ const DEFAULT_PREFERENCES: PreferencesState = {
   theme: 'system',
   emailNotifications: true,
   inAppNotifications: true,
-  defaultLandingPage: '/dashboard',
+  defaultLandingPage: '/',
   defaultReportingPeriod: 'This Month',
   currency: 'USD',
   dateFormat: 'DD/MM/YYYY',
